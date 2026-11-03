@@ -1,0 +1,19 @@
+ASSET ALLOCATION
+FRE 6991
+Fall 2026
+Homework 1
+Due by Sunday, November 8th
+
+Volatility & Correlation
+
+Consider the following companies:
+Apple Computer (AAPL)
+Exxon-Mobile (XOM)
+Pfizer (PFE)
+Consolidated Edison (ED)
+
+Determine the daily returns of these stocks from 10/01/2024 until 10/01/2026
+
+Using a window of 30 days, calculate and plot the histogram of volatility(annualized) and correlation for these returns
+
+Calculate volatility and correlation using monthly returns and use them to plot the Efficient Frontier based on these four stocks.

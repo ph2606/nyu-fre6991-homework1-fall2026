@@ -1,0 +1,12 @@
+{
+  "retrieved_at": "2026-11-03T13:10:08.670608-05:00",
+  "provider": "Yahoo Finance via yfinance",
+  "yfinance_version": "1.3.0",
+  "request": {
+    "start_inclusive": "2024-09-30",
+    "end_exclusive": "2026-10-02",
+    "auto_adjust": false,
+    "actions": true
+  },
+  "note": "Initial download performed in this session; metadata recorded immediately after preparing analysis. Raw CSVs are frozen and hashed in results/summary.json."
+}

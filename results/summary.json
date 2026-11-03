@@ -1,0 +1,85 @@
+{
+  "author": "Panagiotis Housos",
+  "course": "Asset Allocation (FRE 6991), Fall 2026",
+  "sample": {
+    "daily_start": "2024-10-01",
+    "daily_end": "2026-10-01",
+    "daily_observations": 502,
+    "price_observations_with_baseline": 503,
+    "rolling_window": 30,
+    "rolling_observations": 473,
+    "first_window_end": "2024-11-11",
+    "monthly_observations": 24,
+    "monthly_start": "2024-10",
+    "monthly_end": "2026-09"
+  },
+  "annualization": {
+    "trading_days": 252,
+    "months": 12,
+    "std_ddof": 1
+  },
+  "gmv": {
+    "weights": {
+      "AAPL": 0.33050413337593976,
+      "XOM": 0.0,
+      "PFE": 0.1976130609635318,
+      "ED": 0.47188280566052854
+    },
+    "annual_mean": 0.10148823382126658,
+    "annual_volatility": 0.09587174123115014
+  },
+  "validation": {
+    "passed": true,
+    "same_trading_dates_all_stocks": true,
+    "missing_prices": 0,
+    "dropped_dates": 0,
+    "forward_filled_prices": 0,
+    "monthly_compounding_matches_daily": true,
+    "covariance_min_eigenvalue": 0.013957170774315126,
+    "independent_optimizer_max_variance_gap": 8.153200337090993e-17
+  },
+  "raw_data_provenance": {
+    "AAPL": {
+      "source_url": "https://finance.yahoo.com/quote/AAPL/history/",
+      "raw_file": "data/raw/AAPL.csv",
+      "sha256": "f142cdfa0b8eaff0431095699067410c6335f3824c41df3db5a6be72cc0adb63",
+      "price_observations": 503,
+      "first_date": "2024-09-30",
+      "last_date": "2026-10-01",
+      "last_close": 330.32000732421875
+    },
+    "XOM": {
+      "source_url": "https://finance.yahoo.com/quote/XOM/history/",
+      "raw_file": "data/raw/XOM.csv",
+      "sha256": "7927f8f453b937f3d78da942424f8546cc9b9f8d34d82eb4d659747a538e397e",
+      "price_observations": 503,
+      "first_date": "2024-09-30",
+      "last_date": "2026-10-01",
+      "last_close": 163.82000732421875
+    },
+    "PFE": {
+      "source_url": "https://finance.yahoo.com/quote/PFE/history/",
+      "raw_file": "data/raw/PFE.csv",
+      "sha256": "c36e14aef800d61c4f14e0f33db6870ee96506ce6279721a72d99b869510a00f",
+      "price_observations": 503,
+      "first_date": "2024-09-30",
+      "last_date": "2026-10-01",
+      "last_close": 28.1200008392334
+    },
+    "ED": {
+      "source_url": "https://finance.yahoo.com/quote/ED/history/",
+      "raw_file": "data/raw/ED.csv",
+      "sha256": "f719455000427778a0fb0e4b10ece7dcd2ceede11a000a57918006cea683bf90",
+      "price_observations": 503,
+      "first_date": "2024-09-30",
+      "last_date": "2026-10-01",
+      "last_close": 103.5
+    }
+  },
+  "versions": {
+    "python": "3.12.5",
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "matplotlib": "3.9.0"
+  }
+}
