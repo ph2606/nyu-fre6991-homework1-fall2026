@@ -8,5 +8,5 @@
     "auto_adjust": false,
     "actions": true
   },
-  "note": "Initial download performed in this session; metadata recorded immediately after preparing analysis. Raw CSVs are frozen and hashed in results/summary.json."
+  "note": "The 2024-09-30 price supplies the first requested daily return; October 2026 is incomplete for monthly analysis."
 }

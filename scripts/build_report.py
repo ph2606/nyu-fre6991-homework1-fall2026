@@ -1,4 +1,4 @@
-"""Regenerate calculations and compile the LaTeX PDF, with no shell expansion."""
+"""Build the report PDF with pdflatex."""
 
 import argparse
 from pathlib import Path

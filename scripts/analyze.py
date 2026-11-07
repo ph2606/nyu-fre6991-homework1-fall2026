@@ -1,8 +1,4 @@
-"""Reproduce Homework 1 from the frozen Yahoo Finance CSV snapshots.
-
-Run from any working directory: python scripts/analyze.py
-Returns and weights are stored as decimals; figures/tables display percentages.
-"""
+"""Calculate returns, rolling statistics, and efficient frontiers for Homework 1."""
 
 from __future__ import annotations
 
@@ -44,12 +40,7 @@ def save_figure(fig, name):
 
 
 def portfolio(mu, cov, target=None, long_only=True):
-    """Exact minimum variance via all 15 possible nonzero weight supports.
-
-    For each support solve the equality-constrained quadratic program in
-    closed form, then retain feasible weights and select the minimum risk.
-    With four stocks this also avoids optimizer convergence uncertainty.
-    """
+    """Find minimum-variance weights by checking each subset of stocks."""
     n = len(mu)
     candidates = []
     supports = (range(n),) if not long_only else (
@@ -113,7 +104,7 @@ def main():
                               "first_date": str(frame.index.min().date()),
                               "last_date": str(frame.index.max().date()),
                               "last_close": float(frame["Close"].iloc[-1])}
-    # Require identical dates rather than silently dropping or filling data.
+    # All four stocks should have the same trading dates.
     assert all(index.equals(indices[0]) for index in indices)
     prices = pd.concat(series, axis=1)
     assert not prices.isna().any().any()
@@ -129,7 +120,7 @@ def main():
     assert rolling_corr.abs().to_numpy().max() <= 1 + 1e-12
     assert (rolling_vol >= 0).all().all()
 
-    # September 30 baseline plus the 24 fully observed month ends.
+    # Exclude the incomplete October 2026 month.
     monthly_prices = prices.loc[:"2026-09-30"].resample("ME").last()
     monthly = monthly_prices.pct_change(fill_method=None).dropna()
     assert len(monthly) == 24
@@ -153,7 +144,7 @@ def main():
     equal = np.ones(4) / 4
     assert gmv @ cov @ gmv <= min(np.diag(cov).min(), equal @ cov @ equal) + 1e-10
 
-    # Independent numerical optimizer checks the closed-form active-set solver.
+    # Compare a few frontier points with SLSQP.
     max_solver_gap = 0.0
     for i in [0, 20, 60, 100, 140, 180]:
         target = targets[i]

@@ -1,4 +1,4 @@
-"""Explicitly refresh Yahoo Finance inputs; analyze.py uses saved inputs offline."""
+"""Download the four stock price histories from Yahoo Finance."""
 
 from datetime import datetime
 from importlib.metadata import version
