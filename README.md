@@ -1,8 +1,7 @@
 # Homework 1 — Volatility & Correlation
 
 **Panagiotis Housos · ph2606**<br>
-**New York University · Asset Allocation (FRE 6991) · Fall 2026**<br>
-Prepared November 3, 2026 · Due Sunday, November 8, 2026
+**New York University · Asset Allocation (FRE 6991) · Fall 2026**
 
 The completed report answers the supplied assignment for **AAPL, XOM, PFE, and ED**.
 
